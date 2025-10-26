@@ -48,4 +48,4 @@ Xをはじめとした、各種SNSでの宣伝が最も確実であると考え�
     ある程度実装が進んだら導入：kaminari / image_processing 等
 
 ## 画面遷移図
-Figma:https://www.figma.com/design/gRv8Pf7UJrm3MkbQplhrKU/%E5%8D%92%E6%A5%AD%E5%88%B6%E4%BD%9C?node-id=0-1&t=olxGjiJP3K0GtBDj-1
+Figma:https://www.figma.com/design/gRv8Pf7UJrm3MkbQplhrKU/%E5%8D%92%E6%A5%AD%E5%88%B6%E4%BD%9C?node-id=1-21&t=CzmHDlbpqUoWpVhW-1
