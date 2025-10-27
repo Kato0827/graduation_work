@@ -49,3 +49,6 @@ Xをはじめとした、各種SNSでの宣伝が最も確実であると考え�
 
 ## 画面遷移図
 Figma:https://www.figma.com/design/gRv8Pf7UJrm3MkbQplhrKU/%E5%8D%92%E6%A5%AD%E5%88%B6%E4%BD%9C?node-id=1-21&t=CzmHDlbpqUoWpVhW-1
+
+## ER図
+gyazo:https://gyazo.com/148815c1164d531918d5777961df70cf
