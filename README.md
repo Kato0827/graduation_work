@@ -52,3 +52,6 @@ Figma:https://www.figma.com/design/gRv8Pf7UJrm3MkbQplhrKU/%E5%8D%92%E6%A5%AD%E5%
 
 ## ER図
 gyazo:https://gyazo.com/a2bc18b92868c5fb4522cc1254625b0e
+
+## ISSUEベース
+https://github.com/users/Kato0827/projects/1/views/2
