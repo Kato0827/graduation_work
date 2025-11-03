@@ -1,24 +1,55 @@
-# README
+## サービス概要
+尿路結石患者専用のWebサービス。
+サービスの形式としてはCGMとなる。
+日常生活での工夫、日々の不安、排石（結石が体外に出てくること）の様子などを共有し、ユーザーたちが尿路結石を乗り越えるための拠り所を提供する。
+## このサービスへの思い・作りたい理由
+私自身が尿路結石を患っており、生活の中で、いつ痛みに襲われるかという不安を抱えている。
+そこで、同じ悩みを持つユーザーのためのWebサービスがあれば、日々の不安が少しでも和らぐのではないかと考えた。
+## ユーザー層について
+尿路結石は老若男女を問わず発症する可能性がある。
+ただし、男性の30~60代に好発であるため、デジタルネイティブである30代周辺の男性が最大のユーザー層になると思われる。
+## サービスの利用イメージ
+尿路結石に悩むユーザーが登録し、ユーザー間で悩みや不安などを共有、ひいては緩和につながる。
+## ユーザーの獲得について
+Xをはじめとした、各種SNSでの宣伝が最も確実であると考える。
+## サービスの差別化ポイント・推しポイント
+病気に悩む人々は、同じ境遇にある仲間を求めてSNS上で繋がることがある。
+しかし今回提案するサービスは、元より「尿路結石患者専用」を掲げて運用するため、確実に同じ目的を持ったユーザーが集まるという独自性がある。
+## 機能候補
+- MVPリリースまでに作っていたいもの
+  ユーザー登録機能
+  記事投稿機能（Rails応用で作成したようなアプリを想定）
+  排石記録機能（結石が体外に排出された日や、様子を記録する）
+    石の大きさをレンジスライダーで表現し、痛み等の補足情報を文章で投稿する形式をとる予定。
+- 本リリースまでに作っていたいもの
+  ゲスト投稿機能（ユーザー登録なしでも、匿名で記事の投稿を可能とする）
+  記事へのコメント機能
+  排石詳細機能（排出された結石のサイズ等をより詳細に記録できるフォーマットを用意する）
+  つぶやき機能（Xのタイムラインのような機能を想定）
+## 使用する技術スタック
+一般的なCRUD以外の実装予定の機能についてそれぞれどのようなイメージで実装する予定なのか現状考えているもので良いので教えて下さい。
+サービスを実装するための技術スタックについて、以下のような観点で記載してください。
+- 使用するフレームワーク
+  Ruby on Rails（これまでの課題で使用してきたため）
+- データベース
+  PostgreSQL（主要なデプロイサービスで標準サポートされているとの評判から）
+- デプロイ先
+  Render（無料であることや、学習コストが低いという評判から）
+- 使用予定のライブラリ
+  あまり考えられていないが、らんてくんの提案より、以下のように段階を追っての導入を検討している。
+    最初に導入：devise / bootstrap
+    ある程度実装が進んだら導入：kaminari / image_processing 等
+## 画面遷移図
+Figma:https://www.figma.com/design/gRv8Pf7UJrm3MkbQplhrKU/%E5%8D%92%E6%A5%AD%E5%88%B6%E4%BD%9C?node-id=1-21&t=CzmHDlbpqUoWpVhW-1
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## ER図
+gyazo:https://gyazo.com/a2bc18b92868c5fb4522cc1254625b0e
 
-Things you may want to cover:
+## ISSUEベース
+https://github.com/users/Kato0827/projects/1/views/2
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 開発環境
+- Ruby 3.2.0
+- Rails 7.1.6
+- PostgreSQL 15
+- Docker & Docker Compose
