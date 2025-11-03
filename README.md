@@ -50,6 +50,6 @@ https://github.com/users/Kato0827/projects/1/views/2
 
 ## 開発環境
 - Ruby 3.2.0
-- Rails 7.1.x
+- Rails 7.1.6
 - PostgreSQL 15
 - Docker & Docker Compose
