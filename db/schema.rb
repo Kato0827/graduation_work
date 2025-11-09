@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_11_09_052159) do
+ActiveRecord::Schema[7.1].define(version: 2025_11_09_091119) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,6 +21,18 @@ ActiveRecord::Schema[7.1].define(version: 2025_11_09_052159) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_boards_on_user_id"
+  end
+
+  create_table "stone_records", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "body", null: false
+    t.bigint "user_id", null: false
+    t.decimal "stone_size", precision: 3, scale: 1
+    t.date "record_date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "record_date"], name: "index_stone_records_on_user_id_and_record_date"
+    t.index ["user_id"], name: "index_stone_records_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,4 +49,5 @@ ActiveRecord::Schema[7.1].define(version: 2025_11_09_052159) do
   end
 
   add_foreign_key "boards", "users"
+  add_foreign_key "stone_records", "users"
 end
