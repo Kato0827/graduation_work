@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title"><%= @board.title %></h1>
+          
+          <div class="mb-3">
+            <small class="text-muted">
+              投稿者: <%= @board.user.name %> | 
+              投稿日: <%= @board.created_at.strftime("%Y年%m月%d日 %H:%M") %>
+            </small>
+          </div>
+          
+          <div class="card-text">
+            <%= simple_format(@board.body) %>
+          </div>
+          
+          <div class="mt-4">
+            <%= link_to "記事一覧に戻る", boards_path, class: "btn btn-secondary" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

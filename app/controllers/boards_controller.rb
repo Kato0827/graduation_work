@@ -7,6 +7,10 @@ class BoardsController < ApplicationController
     @boards = Board.includes(:user)
   end
 
+  def show
+    @board = Board.find(params[:id])
+  end
+
   def new
     @board = Board.new
   end
