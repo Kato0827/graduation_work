@@ -18,7 +18,7 @@ class StoneRecordsController < ApplicationController
   def create
     @stone_record = current_user.stone_records.build(stone_record_params)
     if @stone_record.save
-      redirect_to stone_records_path, notice: '排石記録を作成しました'
+      redirect_to stone_records_path
     else
       render :new, status: :unprocessable_entity
     end
