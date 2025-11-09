@@ -2,15 +2,11 @@
   <div class="container">
     <%= link_to "尿路結石サポート用SNS", root_path, class: "navbar-brand" %>
     <%= link_to "記事一覧", boards_path, class: "nav-link" %>
+    <%= link_to "排石記録一覧", stone_records_path, class: "nav-link" %>
     <div class="navbar-nav ms-auto">
       <% if user_signed_in? %>
         <%= link_to "記事投稿", new_board_path, class: "nav-link" %>
-<%
-=begin %>
-        <%= link_to "排石記録", stone_records_path, class: "nav-link" %>
-        <%= link_to "マイページ", user_path(current_user), class: "nav-link" %>
-<%
-=end %>
+        <%= link_to "排石記録", new_stone_record_path, class: "nav-link" %>
         <%= form_with url: destroy_user_session_path, method: :delete, local: true, class: "d-inline" do |form| %>
           <%= form.submit "ログアウト", class: "btn btn-link nav-link p-0", 
                           style: "border: none; background: none; text-decoration: none; color: inherit;",
