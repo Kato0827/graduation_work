@@ -1,24 +1,22 @@
-<div class="container pt-3">
-  <div class="row">
-    <div class="col-lg-10 offset-lg-1">
-      <!-- 検索フォーム -->
-      <form>
-        <div class="input-group mb-3"><input class="form-control" placeholder="検索ワード" type="search"/>
-          <div class="input-group-append"><input type="submit" value="検索" class="btn btn-primary"/></div>
-        </div>
-      </form>
+<div class="container">
+  <h1>記事一覧</h1>
+  
+  <% if user_signed_in? %>
+    <div class="mb-3">
+      <%= link_to "新しい記事を投稿", new_board_path, class: "btn btn-primary" %>
     </div>
-  </div>
-  <!-- 掲示板一覧 -->
-  <div class="row">
-    <div class="col-12">
-      <div class="row">
-        <% if @boards.present? %>
-          <%= render @boards %>
-        <% else %>
-          <div class="mb-3">掲示板がありません</div>
-        <% end %>
+  <% end %>
+  
+  <% @boards.each do |board| %>
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">
+          <%= link_to board.title, board_path(board), class: "text-decoration-none" %>
+        </h5>
+        <p class="card-text"><%= truncate(board.body, length: 100) %></p>
+        <p class="text-muted">投稿者: <%= board.user.name %></p>
+        <%= link_to "詳細を見る", board_path(board), class: "btn btn-outline-primary btn-sm" %>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>
