@@ -1,0 +1,8 @@
+ja:
+  boards:
+    new:
+      title: 掲示板作成
+    edit:
+      title: 掲示板編集
+    show:
+      title: 掲示板詳細
