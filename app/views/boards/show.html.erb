@@ -15,9 +15,14 @@
           <div class="card-text">
             <%= simple_format(@board.body) %>
           </div>
+
           <div class="mt-4">
             <% if user_signed_in? && @board.user == current_user %>
               <%= link_to "編集", edit_board_path(@board), class: "btn btn-success" %>
+              <%= button_to "削除", board_path(@board), 
+                  method: :delete, 
+                  data: { turbo_confirm: "本当に削除しますか?" }, 
+                  class: "btn btn-danger" %>
             <% end %>
             <%= link_to "記事一覧に戻る", boards_path, class: "btn btn-secondary" %>
           </div>
