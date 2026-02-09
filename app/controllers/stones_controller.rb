@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class StonesController < ApplicationController
-  before_action :set_stone, only: %i[show edit update]
-  before_action :authenticate_user!, only: %i[new create edit update]
-  before_action :authorize_user!, only: %i[edit update]
+  before_action :set_stone, only: %i[show edit update destroy]
+  before_action :authenticate_user!, only: %i[new create edit update destroy]
+  before_action :authorize_user!, only: %i[edit update destroy]
 
   def index
     @stones = Stone.includes(:user)
@@ -34,6 +34,11 @@ class StonesController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @stone.destroy!
+    redirect_to stones_path, notice: '掲示板を削除しました', status: :see_other
   end
 
   private

@@ -18,6 +18,10 @@
     <div class="mt-4">
       <% if user_signed_in? && @stone.user == current_user %>
         <%= link_to "編集", edit_stone_path(@stone), class: "btn btn-success" %>
+        <%= button_to "削除", stone_path(@stone), 
+            method: :delete, 
+            data: { turbo_confirm: "本当に削除しますか?" }, 
+            class: "btn btn-danger" %>
       <% end %>
       <%= link_to "排石記録一覧に戻る", stones_path, class: "btn btn-secondary" %>
     </div>
