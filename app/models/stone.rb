@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class StoneRecord < ApplicationRecord
+class Stone < ApplicationRecord
   validates :title, presence: true, length: { maximum: 255 }
   validates :body, presence: true, length: { maximum: 65_535 }
   validates :stone_size, presence: true,

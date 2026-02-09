@@ -1,0 +1,25 @@
+<% content_for(:title, @stone.title) %>
+
+<div class="container mx-auto px-4 py-8">
+  <div class="bg-white shadow-md rounded-lg p-6">
+    <div class="mb-4">
+      <h1 class="text-3xl font-bold text-gray-800 mb-2"><%= @stone.title %></h1>
+      <div class="text-sm text-gray-500 mb-4">
+        <span>記録日: <%= @stone.record_date %></span> | 
+        <span>サイズ: <%= @stone.stone_size %>mm</span> | 
+        <span>投稿者: <%= @stone.user.name %></span>
+      </div>
+    </div>
+    
+    <div class="prose max-w-none">
+      <%= simple_format(@stone.body) %>
+    </div>
+    
+    <div class="mt-4">
+      <% if user_signed_in? && @stone.user == current_user %>
+        <%= link_to "編集", edit_stone_path(@stone), class: "btn btn-success" %>
+      <% end %>
+      <%= link_to "排石記録一覧に戻る", stones_path, class: "btn btn-secondary" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<%= form_with model: stone, class: 'bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4' do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <div class="mb-4">
+    <%= f.label :title, 'タイトル', class: 'block text-gray-700 text-sm font-bold mb-2' %>
+    <%= f.text_field :title, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+  </div>
+
+  <div class="mb-4">
+    <%= f.label :body, '内容', class: 'block text-gray-700 text-sm font-bold mb-2' %>
+    <%= f.text_area :body, rows: 10, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+  </div>
+
+  <div class="mb-4">
+    <%= f.label :record_date, '記録日', class: 'block text-gray-700 text-sm font-bold mb-2' %>
+    <%= f.date_field :record_date, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+  </div>
+
+  <div class="mb-4">
+    <%= f.label :stone_size, '結石サイズ (mm)', class: 'block text-gray-700 text-sm font-bold mb-2' %>
+    <%= f.number_field :stone_size, step: 0.1, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+  </div>
+
+  <div class="flex items-center justify-between">
+    <%= f.submit class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' %>
+    <%= link_to '戻る', stones_path, class: 'bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded' %>
+  </div>
+<% end %>
