@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'home/index'
   resources :boards, only: %i[index new create show edit update destroy]
-  resources :stones, only: %i[index new create show edit update]
+  resources :stones, only: %i[index new create show edit update destroy]
 end
