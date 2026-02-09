@@ -15,9 +15,11 @@
       <%= simple_format(@stone.body) %>
     </div>
     
-    <div class="mt-6 flex gap-4">
-      <%= link_to '一覧に戻る', stones_path, 
-          class: 'bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded' %>
+    <div class="mt-4">
+      <% if user_signed_in? && @stone.user == current_user %>
+        <%= link_to "編集", edit_stone_path(@stone), class: "btn btn-success" %>
+      <% end %>
+      <%= link_to "排石記録一覧に戻る", stones_path, class: "btn btn-secondary" %>
     </div>
   </div>
 </div>
